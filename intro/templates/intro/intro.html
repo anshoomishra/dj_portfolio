@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block intro %}
+
+<div class="intro">
+    <div class="content">
+    <h1 class="mb-2">
+        {{intro_data.name}}
+    </h1>
+
+    <h3 class="mb-3">
+        {{intro_data.title}}
+    </h3>
+    <p class="mb-3">
+        {{intro_data.short_intro}}
+    </p>
+    </div>
+
+</div>
+
+{% endblock %}
