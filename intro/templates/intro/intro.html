@@ -1,24 +1,44 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block intro %}
 
-<div class="intro container">
+<div class="introduction container">
     <div class="content">
-        <h1 class="mb-2 name">
+        <h1 class="mb-4 name">
             {{intro_data.name}}
         </h1>
 
         <h3 class="mb-3">
             {{intro_data.title}}
         </h3>
-        <p class="mb-3">
+
+        <p class="mb-5 px-5 short_intro">
             {{intro_data.short_intro}}
         </p>
+        <div class="type_effect mb-3">
+            <h6>
+                <a href="" class="typewrite text-danger" data-period="2000"
+                   data-type='[ "Python Developer.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
+                    <span class="wrap text-danger"></span>
+                </a>
+            </h6>
+        </div>
+        <div class="skills">
+            <span class="badge badge-primary p-2 bg-dark mx-2">Django</span>
+            <span class="badge badge-secondary p-2 bg-danger mx-2">React</span>
+            <span class="badge badge-success p-2 bg-info mx-2" >Cloud</span>
+        </div>
+        <div class="intro-hr mb-5"></div>
+        <div class="text-center">
+            <button class="btn btn-danger p-2">Download CV</button>
+        </div>
     </div>
-    <div class="right-content">
-
-    </div>
+<!--    <div class="right-content">-->
+<!--        <img src="{% static 'intro/anshu.jpg' %}" alt="My image">-->
+<!--    </div>-->
 
 </div>
 
+
+{% include "about/about.html" %}
 {% endblock %}

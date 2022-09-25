@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
-
+import dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'intro',
+    'skill',
+    'experience',
+    'about',
 ]
 
 MIDDLEWARE = [
@@ -49,7 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'dj_portfolio.urls'
-TEMP_DIR =  BASE_DIR / "templates/"
+TEMP_DIR =  BASE_DIR / "template/"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -124,3 +127,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
+
+dotenv.load_dotenv(".env")
+
+SECRET_KEY = os.environ['SECRET_KEY']
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"

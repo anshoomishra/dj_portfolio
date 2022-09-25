@@ -1,15 +1,127 @@
+body{
+font-family: 'Poppins', sans-serif !important;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff4e38;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fa4e48;
+  border-radius: 12px;
+}
+
 .intro{
+     background-image: url('/static/img/background.png');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+}
+.introduction{
+    text-align:center;
     display:flex;
     align-items:center;
-    height:90vh;
+    height:100vh;
     justify-content:center;
-    background:#6610f2;
     font-family: 'Poppins', sans-serif;
-    color:white;
+    /*color:#ff4e38;*/
+    color:teal;
 
 }
 
 .name{
     font-size:5rem;
     font-weight:bold;
+    margin-bottom:20rem;
+}
+.intro-hr{
+    width:120px;
+    background:#ff4e38;
+    height:5px;
+    text-align:center;
+}
+.short_intro{
+    font-weight:light;
+
+}
+.navbar{
+    background:#7a4a34 !important;
+}
+/* About Section */
+.heading_content{
+    background:#FF003B;
+    padding:5rem;
+}
+.heading{
+    font-family: 'Poppins', sans-serif;
+    font-size:2rem;
+    font-weight:bold;
+    display:block;
+    color:whitesmoke;
+    padding:0.2rem;
+
+}
+.about{
+    display:flex;
+    justify-content:center;
+}
+.brief_intro{
+    padding-right:10rem;
+}
+
+.type_effect a{
+    color:teal;
+    text-decoration:none;
+    font-size:1rem;
+    font-family:Poppins;
+}
+/************* Experience **************/
+.experience h1{
+    font-family:Poppins !important;
+
+}
+.note {
+  background: #ff4e38;
+  border: 1px solid red;
+  padding: 1rem;
+  color:white;
+}
+
+.active {
+  background: #ff4e38 !important;
+
+  padding: 1rem;
+  color:white;
+
+}
+.show{
+    background:#ffffff !important;
+
+}
+
+.about-img {
+  position: relative;
+  width: 550px;
+  height: 550px;
+  background: white;
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+  color: white;
+  box-shadow: 20px 20px rgba(0,0,0,.15);
+  transition: all .4s ease;
+}
+.about-img:hover {
+  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+  box-shadow: 10px 10px rgba(0,0,0,.25);
 }

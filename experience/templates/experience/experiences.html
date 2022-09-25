@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block experience %}
+
+<div class="container">
+    {% for company in companies %}
+    <div class="experience">
+        <h1 class="text-center mt-5 mb-5">{{company.name}}</h1>
+    </div>
+    <div class="row justify-content-center vh-50">
+        <div class="col-10 col-md-10 shadow">
+            <div class="d-flex align-items-start p-3">
+                <div class="nav flex-column align-items-around nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#{{company.name|cut:' '}}-pills-home" type="button" role="tab"
+                            aria-controls="v-pills-home"
+                            aria-selected="true">Short Info
+                    </button>
+                    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#{{company.name|cut:' '}}-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">Responsibilities
+                    </button>
+
+                    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
+                            data-bs-target="#{{company.name|cut:' '}}-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                            aria-selected="false">Tech Stack
+                    </button>
+
+                </div>
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="{{company.name|cut:' '}}-pills-home" role="tabpanel"
+                         aria-labelledby="v-pills-home-tab" tabindex="0">
+                        <div class="row justify-content-center">
+                            <div class="col-10 col-md-5 company-joining-date">
+                                <div class="card text-dark bg-light mb-3" style="min-width: 18rem;">
+                                    <div class="card-header">Joined On</div>
+                                    <div class="card-body">
+
+                                        <p class="card-text">{{company.joining_date}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-10 col-md-5 company-joining-status">
+                                <div class="card text-dark bg-light mb-3" style="min-width: 18rem;">
+                                    <div class="card-header">Status</div>
+                                    <div class="card-body">
+
+                                        <p class="card-text">{{company.duration}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="{{company.name|cut:' '}}-pills-profile" role="tabpanel"
+                         aria-labelledby="v-pills-profile-tab" tabindex="0">
+                        {% for responsibility in company.responsibilities.all %}
+                        <div class="note mt-2 shadow">{{responsibility}}</div>
+
+                        {% endfor %}
+                    </div>
+
+                    <div class="tab-pane fade" id="{{company.name|cut:' '}}-pills-messages" role="tabpanel"
+                         aria-labelledby="v-pills-messages-tab" tabindex="0">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

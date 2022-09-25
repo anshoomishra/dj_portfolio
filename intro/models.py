@@ -3,6 +3,14 @@ from .utils import upload_to
 from django.db.models.signals import pre_save
 # Create your models here.
 
+class AboutMe(models.Model):
+    title = models.CharField(max_length=100,null=True)
+    description = models.TextField()
+    extra_circular_activities = models.TextField()
+    
+    
+    def __str__(self):
+        return self.title + " about "
 
 class Introduction(models.Model):
     name = models.CharField(max_length=100)
